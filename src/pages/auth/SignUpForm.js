@@ -29,7 +29,6 @@ const SignUpForm = () => {
   const history = useHistory();
 
   const handleChange = (event) => {
-    console.log(handleChange)
     setSignUpData({
       ...signUpData,
       [event.target.name]: event.target.value,
@@ -37,14 +36,11 @@ const SignUpForm = () => {
   };
 
   const handleSubmit = async (event) => {
-    console.log(handleSubmit)
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
       history.push("/signin");
-      console.log(axios.post)
     } catch (err) {
-        console.log(console.error())
       setErrors(err.response?.data);
     }
   };
