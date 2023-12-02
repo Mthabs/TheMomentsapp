@@ -7,10 +7,9 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
-import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import Avatar from "./Avatar";
 import axios from "axios";
-
+import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
